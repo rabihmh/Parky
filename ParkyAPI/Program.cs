@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using ParkyAPI.Data;
 using ParkyAPI.IRepository;
+using ParkyAPI.ParkyMapper;
 
 namespace ParkyAPI
 {
@@ -19,6 +20,7 @@ namespace ParkyAPI
                 ));
 
             builder.Services.AddScoped<INationalParkRepository, NationalParkRepository>();
+            builder.Services.AddAutoMapper(typeof(ParkyMappings));
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
