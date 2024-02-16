@@ -20,6 +20,7 @@ namespace ParkyAPI
                 ));
 
             builder.Services.AddScoped<INationalParkRepository, NationalParkRepository>();
+            builder.Services.AddScoped<ITrailRepository, TrailRepository>();
             builder.Services.AddAutoMapper(typeof(ParkyMappings));
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

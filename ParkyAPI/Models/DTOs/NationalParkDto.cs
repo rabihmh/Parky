@@ -4,6 +4,7 @@ namespace ParkyAPI.Models.DTOs
 {
     public class NationalParkDto
     {
+        public int Id { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]

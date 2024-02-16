@@ -66,12 +66,12 @@ namespace ParkyAPI.Controllers
             return CreatedAtRoute("GetNationalPark", new { nationalParkId = nationalPark.Id }, nationalPark);
         }
 
-        [HttpPatch]
+        [HttpPut]
         [Route("{nationalParkId:int}", Name = "UpdateNationalPark")]
         public IActionResult UpdateNationalPark(int nationalParkId, [FromBody] NationalParkDto nationalParkDto)
         {
             
-            if (nationalParkDto == null) return BadRequest(ModelState);
+            if (nationalParkDto == null || nationalParkDto.Id!=nationalParkId) return BadRequest(ModelState);
             
             var nationalPark = _mapper.Map<NationalPark>(nationalParkDto);
 
